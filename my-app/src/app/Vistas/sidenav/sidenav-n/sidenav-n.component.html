@@ -1,1 +1,47 @@
-<p>sidenav-n works!</p>
+<div class="wrapper">
+  <aside id="sidebar">
+    <div class="d-flex">
+      <button class="toggle-btn" type="button" (click)="toggleSidebar()">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="sidebar-logo">
+        <a>Menu</a>
+      </div>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a routerLink="gestion-pedidos" class="sidebar-link">
+          <i class="bi bi-cart"></i>
+          <span>Gestión Pedidos</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="gestion-productos" class="sidebar-link">
+          <i class="bi bi-cart"></i>
+          <span>Gestión Productos</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="general-n" class="sidebar-link">
+          <i class="bi bi-h-square"></i>
+          <span>Principal</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="solicitud" class="sidebar-link">
+          <i class="bi bi-cart"></i>
+          <span>Solicitud</span>
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-box-arrow-left"></i>
+        <span>Salir</span>
+      </a>
+    </div>
+  </aside>
+  <div class="main p-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>

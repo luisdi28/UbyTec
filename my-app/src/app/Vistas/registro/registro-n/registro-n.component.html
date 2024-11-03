@@ -1,1 +1,75 @@
-<p>registro-n works!</p>
+<div class="registro-container">
+  <h2>Registro para Cliente</h2>
+  <form (ngSubmit)="Enviar()">
+
+    <!-- Indicador de campos requeridos -->
+    <p class="campo-requerido-texto">* Campo requerido</p>
+
+    <div class="form-container">
+      <div class="form-left">
+
+        <label for="cedula">Número de Cédula: <span class="asterisco">*</span></label>
+        <input type="text" id="cedula" name="cedula" [(ngModel)]="cedula" required placeholder="Ej: 123456789">
+
+        <label for="nombre">Nombre: <span class="asterisco">*</span></label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required placeholder="Ej: Juan Diego">
+
+        <label for="apellido1">Primer Apellido: <span class="asterisco">*</span></label>
+        <input type="text" id="apellido1" name="apellido1" [(ngModel)]="apellido1" required placeholder="Ej: Pérez">
+
+        <label for="apellido2">Segundo Apellido: <span class="asterisco">*</span></label>
+        <input type="text" id="apellido2" name="apellido2" [(ngModel)]="apellido2" required placeholder="Ej: Soto">
+
+        <label for="provincia">Provincia: <span class="asterisco">*</span></label>
+        <!-- Selector de continentes -->
+        <select id="provincia" name="provincia" [(ngModel)]="provincia" required>
+          <option value="sj">San José</option>
+          <option value="alajuela">Alajuela</option>
+          <option value="cartago">Cartago</option>
+          <option value="heredia">Heredia</option>
+          <option value="guanacaste">Guanacaste</option>
+          <option value="puntarenas">Puntarenas </option>
+          <option value="limon">Limón</option>
+        </select>
+
+        <label for="canton">Cantón: <span class="asterisco">*</span></label>
+        <input id="canton" name="canton" type="text" [(ngModel)]="canton" required placeholder="Ej: Santa Ana">
+      </div>
+
+      <div class="form-right">
+
+        <label for="distrito">Distrito: <span class="asterisco">*</span></label>
+        <input id="distrito" name="distrito" type="text" [(ngModel)]="distrito" required placeholder="Ej: Pozos">
+
+
+        <label for="fechaNacimiento">Fecha de Nacimiento: <span class="asterisco">*</span></label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="fechaNacimiento" (change)="calcularEdad()" required>
+
+        <label for="edad">Edad: <span class="asterisco">*</span></label>
+        <input type="number" id="edad" name="edad" [(ngModel)]="edad" required placeholder="La edad se autocompleta al ingresar la fecha de nacimiento" readonly>
+
+        <label for="telefono">Teléfono (s): <span class="asterisco">*</span></label>
+        <div class="telefonos-container">
+          <div *ngFor="let telefono of telefonos; let i = index">
+            <label for="telefono{{i}}">Teléfono {{i + 1}}:</label>
+            <input id="telefono{{i}}" type="text" [(ngModel)]="telefonos[i]" required placeholder="Ej: 8888 8888">
+            <button type="button" (click)="eliminarTelefono(i)" *ngIf="telefonos.length > 1">-</button>
+          </div>
+          <button type="button" (click)="agregarTelefono()">+</button>
+        </div>
+
+        <label for="email">Correo: <span class="asterisco">*</span></label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="juandiperez@dominio.com">
+
+        <label for="password">Contraseña: <span class="asterisco">*</span></label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Ingrese su contraseña">
+          <button type="button" (click)="alternarVisibilidadpassword()">👁️</button>
+        </div>
+      </div>
+    </div>
+    <button type="submit">Registrarse</button>
+  </form>
+
+  <button (click)="backTobienvenida()" class="boton-volver" >Volver</button>
+</div>

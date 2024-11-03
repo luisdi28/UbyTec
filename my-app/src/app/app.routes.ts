@@ -10,13 +10,17 @@ import {InicioNComponent} from "./Vistas/inicio/inicio-n/inicio-n.component";
 import {SidenavCComponent} from "./Vistas/sidenav/sidenav-c/sidenav-c.component";
 import {SidenavAComponent} from "./Vistas/sidenav/sidenav-a/sidenav-a.component";
 import {SidenavNComponent} from './Vistas/sidenav/sidenav-n/sidenav-n.component';
+import {GeneralAComponent} from './Vistas/administrador/general-a/general-a.component';
 import {GestionAdminComponent} from './Vistas/administrador/gestion-admin/gestion-admin.component';
 import {GestionAfiliadosComponent} from './Vistas/administrador/gestion-afiliados/gestion-afiliados.component';
 import {GestionRepartidoresComponent} from './Vistas/administrador/gestion-repartidores/gestion-repartidores.component';
 import {GestionTipoComercioComponent} from './Vistas/administrador/gestion-tipo-comercio/gestion-tipo-comercio.component';
 import {ReporteCVentasComponent} from './Vistas/administrador/reporte-c-ventas/reporte-c-ventas.component';
+import {GeneralCComponent} from './Vistas/cliente/general-c/general-c.component';
 import {ReporteVentasAfiliadoComponent} from './Vistas/administrador/reporte-ventas-afiliado/reporte-ventas-afiliado.component';
-import {EntrarComercioComponent} from './Vistas/cliente/entrar-comercio/entrar-comercio.component';
+import {TiendaComponent} from './Vistas/cliente/tienda/tienda.component';
+import {CarritoComponent} from './Vistas/cliente/tienda/carrito/carrito.component';
+import {GeneralNComponent} from './Vistas/negocios/general-n/general-n.component';
 import {GestionPedidosComponent} from './Vistas/negocios/gestion-pedidos/gestion-pedidos.component';
 import {GestionProductosComponent} from './Vistas/negocios/gestion-productos/gestion-productos.component';
 import {SolicitudComponent} from './Vistas/negocios/solicitud/solicitud.component';
@@ -31,11 +35,13 @@ export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
   { path: 'sidenavC', component: SidenavCComponent,
     children: [
-      { path: 'entrar-comercio', component: EntrarComercioComponent},
+      { path: 'general-c', component: GeneralCComponent},
+      { path: 'tienda', component: TiendaComponent},
     ]
   },
   { path: 'sidenavA', component: SidenavAComponent,
     children: [
+      { path: 'general-a', component: GeneralAComponent},
       { path: 'gestion-admin', component: GestionAdminComponent},
       { path: 'gestion-afiliados', component: GestionAfiliadosComponent},
       { path: 'gestion-repartidores', component: GestionRepartidoresComponent},
@@ -46,6 +52,7 @@ export const routes: Routes = [
   },
   { path: 'sidenavN', component: SidenavNComponent,
     children: [
+      { path: 'general-n', component: GeneralNComponent},
       { path: 'gestion-pedidos', component: GestionPedidosComponent},
       { path: 'gestion-productos', component: GestionProductosComponent},
       { path: 'solicitud', component: SolicitudComponent},

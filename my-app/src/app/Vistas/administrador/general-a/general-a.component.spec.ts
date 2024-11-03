@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntrarComercioComponent } from './entrar-comercio.component';
+import { GeneralAComponent } from './general-a.component';
 
-describe('EntrarComercioComponent', () => {
-  let component: EntrarComercioComponent;
-  let fixture: ComponentFixture<EntrarComercioComponent>;
+describe('GeneralAComponent', () => {
+  let component: GeneralAComponent;
+  let fixture: ComponentFixture<GeneralAComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EntrarComercioComponent]
+      imports: [GeneralAComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EntrarComercioComponent);
+    fixture = TestBed.createComponent(GeneralAComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
