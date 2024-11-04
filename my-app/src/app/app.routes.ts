@@ -24,7 +24,6 @@ import {CarritoComponent} from './Vistas/cliente/tienda/carrito/carrito.componen
 import {GeneralNComponent} from './Vistas/negocios/general-n/general-n.component';
 import {GestionPedidosComponent} from './Vistas/negocios/gestion-pedidos/gestion-pedidos.component';
 import {GestionProductosComponent} from './Vistas/negocios/gestion-productos/gestion-productos.component';
-import {SolicitudComponent} from './Vistas/negocios/solicitud/solicitud.component';
 
 export const routes: Routes = [
   { path: '', component: BienvenidaComponent},
@@ -57,7 +56,6 @@ export const routes: Routes = [
       { path: 'general-n', component: GeneralNComponent},
       { path: 'gestion-pedidos', component: GestionPedidosComponent},
       { path: 'gestion-productos', component: GestionProductosComponent},
-      { path: 'solicitud', component: SolicitudComponent},
     ]
   },
 ];

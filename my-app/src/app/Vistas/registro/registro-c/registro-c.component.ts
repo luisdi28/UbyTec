@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./registro-c.component.css'],
 })
 export class RegistroCComponent {
-  email: string = '';
+  usuario: string = '';
   password: string = '';
   cedula: string = '';
   nombre: string = '';
@@ -112,7 +112,7 @@ export class RegistroCComponent {
     if (!this.distrito) camposFaltantes.push('Distrito');
     if (!this.fechaNacimiento) camposFaltantes.push('Fecha de Nacimiento');
     if (!this.telefono) camposFaltantes.push('Teléfono');
-    if (!this.email) camposFaltantes.push('Correo');
+    if (!this.usuario) camposFaltantes.push('Usuario');
     if (!this.password) camposFaltantes.push('Contraseña');
 
     // Si faltan campos, muestra un mensaje y termina la función

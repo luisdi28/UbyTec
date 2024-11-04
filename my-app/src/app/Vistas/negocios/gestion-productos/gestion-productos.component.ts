@@ -39,7 +39,7 @@ export class GestionProductosComponent {
 
     // Validar campos faltantes
     if (!this.nombre) camposFaltantes.push('Nombre');
-    if (!this.categoria) camposFaltantes.push('Categoría ');
+    if (!this.categoria) camposFaltantes.push('Categoría');
     if (!this.foto) camposFaltantes.push('Foto');
     if (!this.precio) camposFaltantes.push('Precio');
 
