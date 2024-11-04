@@ -50,21 +50,25 @@ input, select {
   margin-bottom: 10px;
 }
 
+.button-group {
+  display: flex;
+  justify-content: center; /* Centra los botones en el contenedor */
+  gap: 20px; /* Espacio entre los botones "+" y "-" */
+  margin-top: 10px; /* Espacio entre los botones y el último campo de teléfono */
+}
+
 .telefonos-container button {
-  width: 30px; /* Modifica el tamaño según sea necesario */
-  padding: 5px;
-  background-color: #e76f51; /* Color de fondo del botón */
+  width: 40px; /* Ajusta el ancho del botón */
+  height: 40px; /* Ajusta la altura del botón */
+  background-color: #e76f51;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   color: white;
-  font-size: 18px; /* Tamaño del texto */
-}
-
-.telefonos-container > div {
+  font-size: 18px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 7px; /* Espacio entre el input y los botones */
 }
 
 .password-container {
@@ -90,7 +94,7 @@ input, select {
 }
 
 button {
-  width: 100%;
+  width: 30%;
   padding: 10px;
   background-color: #e07a5f; /* Fondo naranja sobrio */
   border: none;
