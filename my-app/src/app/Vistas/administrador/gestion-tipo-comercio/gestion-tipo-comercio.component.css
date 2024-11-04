@@ -6,7 +6,6 @@
   padding: 20px;
   background: linear-gradient(to right, #f4c8a3, #f29e7c); /* Gradiente en tonos naranja sahara */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 100vh; /* Se ajusta la altura al tamaño de la ventana del navegador */
 }
 

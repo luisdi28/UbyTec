@@ -43,30 +43,6 @@ input, select {
   border: 1px solid #ccc;
 }
 
-.telefonos-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Espacio entre los inputs de teléfono */
-  margin-bottom: 10px;
-}
-
-.telefonos-container button {
-  width: 30px; /* Modifica el tamaño según sea necesario */
-  padding: 5px;
-  background-color: #e76f51; /* Color de fondo del botón */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  font-size: 18px; /* Tamaño del texto */
-}
-
-.telefonos-container > div {
-  display: flex;
-  align-items: center;
-  gap: 7px; /* Espacio entre el input y los botones */
-}
-
 .password-container {
   display: flex;
   align-items: center;

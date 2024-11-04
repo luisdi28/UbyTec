@@ -8,10 +8,10 @@
       <div class="form-left">
 
         <label for="cedula">Número de Cédula Jurídica: <span class="asterisco">*</span></label>
-        <input type="text" id="cedula" name="cedula" [(ngModel)]="cedula" (input)="formatearCedula()" maxlength="11" required placeholder="1-2345-6789">
+        <input type="text" id="cedula" name="cedula" [(ngModel)]="cedula" (input)="formatearCedula()" maxlength="11" required placeholder="3-2345-6789">
 
         <label for="nombre">Nombre del comercio: <span class="asterisco">*</span></label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required placeholder="Ej: Juan Diego">
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required placeholder="Ej: KFC">
 
         <label for="tipo">Tipo de Comercio: <span class="asterisco">*</span></label>
         <input type="text" id="tipo" name="tipo" [(ngModel)]="tipo" required placeholder="Ej: Dulceria">

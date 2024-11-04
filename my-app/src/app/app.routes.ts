@@ -11,6 +11,7 @@ import {SidenavCComponent} from "./Vistas/sidenav/sidenav-c/sidenav-c.component"
 import {SidenavAComponent} from "./Vistas/sidenav/sidenav-a/sidenav-a.component";
 import {SidenavNComponent} from './Vistas/sidenav/sidenav-n/sidenav-n.component';
 import {GeneralAComponent} from './Vistas/administrador/general-a/general-a.component';
+import {AdministracionAfiliacionesComponent} from './Vistas/administrador/administracion-afiliaciones/administracion-afiliaciones.component';
 import {GestionAdminComponent} from './Vistas/administrador/gestion-admin/gestion-admin.component';
 import {GestionAfiliadosComponent} from './Vistas/administrador/gestion-afiliados/gestion-afiliados.component';
 import {GestionRepartidoresComponent} from './Vistas/administrador/gestion-repartidores/gestion-repartidores.component';
@@ -42,6 +43,7 @@ export const routes: Routes = [
   { path: 'sidenavA', component: SidenavAComponent,
     children: [
       { path: 'general-a', component: GeneralAComponent},
+      { path: 'administracion-afiliaciones', component: AdministracionAfiliacionesComponent},
       { path: 'gestion-admin', component: GestionAdminComponent},
       { path: 'gestion-afiliados', component: GestionAfiliadosComponent},
       { path: 'gestion-repartidores', component: GestionRepartidoresComponent},
