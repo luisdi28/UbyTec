@@ -1,1 +1,31 @@
-<p>gestion-tipo-comercio works!</p>
+<div class="gestionT-container">
+  <h2>Gestión Tipo de Comercio</h2>
+  <form (ngSubmit)="Enviar()">
+
+    <!-- Indicador de campos requeridos -->
+    <p class="campo-requerido-texto">* Campo requerido</p>
+
+    <div class="form-container">
+      <div class="form-left">
+
+        <label for="nombre">Nombre del Negocio Afiliado: <span class="asterisco">*</span></label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required placeholder="Ej: Burger King">
+
+        <label for="tipo">Tipo de Comercio: <span class="asterisco">*</span></label>
+        <select id="tipo" name="tipo" [(ngModel)]="tipo" (change)="generarIdentificador()" required>
+          <option value="restaurante">Restaurante</option>
+          <option value="supermercado">Supermercado</option>
+          <option value="farmacia">Farmacia</option>
+          <option value="dulceria">Dulcería</option>
+        </select>
+
+        <label for="identificador">Código identificador único: <span class="asterisco">*</span></label>
+        <input type="text" id="identificador" name="identificador" [(ngModel)]="identificador" required placeholder="El código identificador único se autocompleta al ingresar el tipo de comercio" readonly>
+
+      </div>
+    </div>
+    <button type="submit">Registrar</button>
+  </form>
+
+  <button (click)="backToAdmin()" class="boton-volver">Volver</button>
+</div>

@@ -2,26 +2,23 @@
   <h2>Registro para Cliente</h2>
   <form (ngSubmit)="Enviar()">
 
-    <!-- Indicador de campos requeridos -->
     <p class="campo-requerido-texto">* Campo requerido</p>
 
     <div class="form-container">
       <div class="form-left">
 
         <label for="cedula">Número de Cédula: <span class="asterisco">*</span></label>
-        <input type="text" id="cedula" name="cedula" [(ngModel)]="cedula" required placeholder="Ej: 123456789">
+        <input type="text" id="cedula" name="cedula" [(ngModel)]="cedula" (input)="formatearCedula()" maxlength="11" required placeholder="1-2345-6789">
 
-        <label for="nombre">Nombre: <span class="asterisco">*</span></label>
+        <label for="nombre">Nombre del comercio: <span class="asterisco">*</span></label>
         <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required placeholder="Ej: Juan Diego">
 
-        <label for="apellido1">Primer Apellido: <span class="asterisco">*</span></label>
-        <input type="text" id="apellido1" name="apellido1" [(ngModel)]="apellido1" required placeholder="Ej: Pérez">
+        <label for="tipo">Tipo de Comercio: <span class="asterisco">*</span></label>
+        <input type="text" id="tipo" name="tipo" [(ngModel)]="tipo" required placeholder="Ej: Dulceria">
 
-        <label for="apellido2">Segundo Apellido: <span class="asterisco">*</span></label>
-        <input type="text" id="apellido2" name="apellido2" [(ngModel)]="apellido2" required placeholder="Ej: Soto">
+        <h5>Dirección</h5>
 
         <label for="provincia">Provincia: <span class="asterisco">*</span></label>
-        <!-- Selector de continentes -->
         <select id="provincia" name="provincia" [(ngModel)]="provincia" required>
           <option value="sj">San José</option>
           <option value="alajuela">Alajuela</option>
@@ -41,35 +38,38 @@
         <label for="distrito">Distrito: <span class="asterisco">*</span></label>
         <input id="distrito" name="distrito" type="text" [(ngModel)]="distrito" required placeholder="Ej: Pozos">
 
+        <label for="telefono1">Teléfono 1: <span class="asterisco">*</span></label>
+        <input id="telefono1" type="text" [(ngModel)]="telefono1" required placeholder="Ej: 8888-8888">
 
-        <label for="fechaNacimiento">Fecha de Nacimiento: <span class="asterisco">*</span></label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="fechaNacimiento" (change)="calcularEdad()" required>
-
-        <label for="edad">Edad: <span class="asterisco">*</span></label>
-        <input type="number" id="edad" name="edad" [(ngModel)]="edad" required placeholder="La edad se autocompleta al ingresar la fecha de nacimiento" readonly>
-
-        <label for="telefono">Teléfono (s): <span class="asterisco">*</span></label>
-        <div class="telefonos-container">
-          <div *ngFor="let telefono of telefonos; let i = index">
-            <label for="telefono{{i}}">Teléfono {{i + 1}}:</label>
-            <input id="telefono{{i}}" type="text" [(ngModel)]="telefonos[i]" required placeholder="Ej: 8888 8888">
-            <button type="button" (click)="eliminarTelefono(i)" *ngIf="telefonos.length > 1">-</button>
-          </div>
-          <button type="button" (click)="agregarTelefono()">+</button>
+        <div *ngIf="mostrarTelefono2">
+          <label for="telefono2">Teléfono 2:</label>
+          <input id="telefono2" type="text" [(ngModel)]="telefono2" placeholder="Ej: 8888-8888">
         </div>
+
+        <div *ngIf="mostrarTelefono3">
+          <label for="telefono3">Teléfono 3:</label>
+          <input id="telefono3" type="text" [(ngModel)]="telefono3" placeholder="Ej: 8888-8888">
+        </div>
+
+        <button type="button" (click)="eliminarTelefono()">-</button>
+
+        <button type="button" (click)="agregarTelefono()">+</button>
 
         <label for="email">Correo: <span class="asterisco">*</span></label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="juandiperez@dominio.com">
+        <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="Ej: example@gmail.com">
 
-        <label for="password">Contraseña: <span class="asterisco">*</span></label>
-        <div class="password-container">
-          <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Ingrese su contraseña">
-          <button type="button" (click)="alternarVisibilidadpassword()">👁️</button>
-        </div>
+        <label for="sinpe">Número de SINPE móvil: <span class="asterisco">*</span></label>
+        <input id="sinpe" name="sinpe" type="text" [(ngModel)]="sinpe" required placeholder="Ej: 8888-8888">
+
+        <label for="admin">Administrador del comercio: <span class="asterisco">*</span></label>
+        <input id="admin" name="admin" type="text" [(ngModel)]="admin" required placeholder="Ej: Juan Perez">
       </div>
     </div>
-    <button type="submit">Registrarse</button>
-  </form>
 
-  <button (click)="backTobienvenida()" class="boton-volver" >Volver</button>
+    <button type="button" (click)="backTobienvenida()">Volver</button>
+    <button type="submit">Registrar</button>
+
+  </form>
 </div>
+
+
